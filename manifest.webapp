@@ -1,13 +1,13 @@
 {
-	"name": "Hello World",
-	"description": "Yet another Hello, World app!",
-	"launch_path": "/index.html",
+	"name": "PhotoFoxGram",
+	"description": "Firefox Instagram!",
+	"launch_path": "/FirefoxOs-PhotoGramLoop/index.html",
 	"icons": {
 		"128": "icon.png"
 	},
 	"developer": {
-		"name": "Your name or organization",
-		"url": "http://your-homepage-here.org"
+		"name": "Firefox App Days Mons (Mathias & Mathieu)",
+		"url": "http://messenjer.github.io/FirefoxOs-PhotoGramLoop"
 	},
 	"permissions": {
 		"device-storage:pictures":{ "access": "readwrite" }
