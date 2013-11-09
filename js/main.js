@@ -13,14 +13,14 @@ App = (function() {
 
   App.imageHeight;
 
-  App.pictureSrc;
+  App.pictureBlob;
 
   function App() {
     this.onLoad = __bind(this.onLoad, this);
     this.canvas = $("canvas");
     this.imageWidth = this.canvas.width();
     this.imageHeight = this.canvas.height();
-    this.pictureSrc = "images/demo.jpg";
+    this.pictureBlob = null;
   }
 
   App.prototype.init = function() {
@@ -61,7 +61,11 @@ App = (function() {
 
   App.prototype.gramify = function(onSuccess) {
     this.ctx = this.canvas.get(0).getContext("2d");
-    this.capturedImage = this.loadImage(this.pictureSrc, this.onLoad);
+    if (!this.pictureBlob) {
+      this.capturedImage = this.loadImage("images/demo.jpg", this.onLoad);
+    } else {
+      this.capturedImage = this.pictureBlob;
+    }
     this.layerImage1 = this.loadImage('images/layerfox-1.png', this.onLoad);
     this.layerImage2 = this.loadImage('images/layerfox-2.png', this.onLoad);
     this.layerColor = this.loadImage('images/layerfox-blue.png', this.onLoad);
@@ -92,8 +96,8 @@ App = (function() {
     return img;
   };
 
-  App.prototype.loadPicture = function(src) {
-    this.pictureSrc = src;
+  App.prototype.loadPicture = function(img) {
+    this.pictureBlob = img;
     return this.screenPicture();
   };
 
