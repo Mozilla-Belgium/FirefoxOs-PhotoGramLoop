@@ -64,7 +64,8 @@ App = (function() {
     if (!this.pictureBlob) {
       this.capturedImage = this.loadImage("images/demo.jpg", this.onLoad);
     } else {
-      this.capturedImage = this.pictureBlob;
+      console.log(this.pictureBlob);
+      this.capturedImage = this.loadImage(this.pictureBlob, this.onLoad);
     }
     this.layerImage1 = this.loadImage('images/layerfox-1.png', this.onLoad);
     this.layerImage2 = this.loadImage('images/layerfox-2.png', this.onLoad);
@@ -96,8 +97,8 @@ App = (function() {
     return img;
   };
 
-  App.prototype.loadPicture = function(img) {
-    this.pictureBlob = img;
+  App.prototype.loadPicture = function(blob) {
+    this.pictureBlob = blob;
     return this.screenPicture();
   };
 
@@ -105,9 +106,7 @@ App = (function() {
 
 })();
 
-$(function() {
   var app;
   app = new App();
   app.init();
-  return window.app = app;
-});
+  window.app = app;

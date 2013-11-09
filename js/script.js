@@ -29,7 +29,9 @@ function showGallery() {
 
 function showImage(id, src) {
     console.log("src: "+src);
-    app.loadPicture(src);
+    console.log('test1');
+    window.app.loadPicture(src);
+    console.log('test2');
 }
 
 $('body').on('click','.image', function () {
