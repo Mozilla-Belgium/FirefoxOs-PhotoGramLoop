@@ -27,12 +27,13 @@ function showGallery() {
 }
 
 
-function showImage(id) {
-    alert("show "+id);
+function showImage(id, src) {
+    app.loadPicture(src);
 }
 
 $('body').on('click','.image', function () {
     var id = $(this).data('id');
-    showImage(id);
+    var src = $(this).attr('src');
+    showImage(id, src);
 })
 
