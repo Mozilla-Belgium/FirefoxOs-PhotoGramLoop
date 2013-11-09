@@ -9,5 +9,8 @@
 		"name": "Your name or organization",
 		"url": "http://your-homepage-here.org"
 	},
+	"permissions": {
+		"device-storage:pictures":{ "access": "readwrite" }
+	},
 	"default_locale": "fr"
 }
