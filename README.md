@@ -11,7 +11,8 @@ TODO
 * Web API : Pick image
 * Web API : Share Url
 * Web API : device storage url
-* Image Filter : apply a transparent layer on the picture
+* Image Filter : apply a transparent layer on the picture 
+  Example : http://jsfiddle.net/ELmMT/2/ 
 * 
 
 
