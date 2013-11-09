@@ -6,12 +6,22 @@
 	</head>
 
 	<body>
-		<h1>Hello, World!</h1>
-		<br />
-		<button id='device-storage-pictures'>device storage!</button>
-		<div id="device-storage-pictures-display"></div>
+
+
+		<div id="screen1" class="screen">
+			<h1>Hello, World!</h1>
+			<button id="pickimage">Take a picture</button>
+		</div>
+
+		<div id="screen2" class="screen">
+			<img src="images/demo.jpg" width="320" />
+			<img src="images/layer-1.png" width="320" />
+			<canvas width="320" height="240" id="canvas"></canvas>
+		</div>
+
 
 		<!-- Insert Our Script -->
-		<script src='script.js'></script>
+		<script src='js/jquery-2.0.3.min.js'></script>
+		<script src='js/main.js'></script>
 	</body>
 </html>
