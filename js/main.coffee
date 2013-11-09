@@ -3,11 +3,13 @@ class App
   @capturedImage
   @layerImage
   @canvas
-
-  @imageWidth = 320
-  @imageHeight = 240
+  @imageWidth
+  @imageHeight
 
   constructor: () ->
+    @canvas = $("canvas")
+    @imageWidth = @canvas.width()
+    @imageHeight = @canvas.height()
 
   init: () ->
     @bind()
@@ -41,9 +43,7 @@ class App
     $(selector).show()
 
   gramify: (onSuccess) ->
-    console.log('gramify')
-    @canvas = document.getElementById("canvas")
-    @ctx = canvas.getContext("2d")
+    @ctx = @canvas.get(0).getContext("2d")
     @capturedImage = @loadImage('images/demo.jpg', @onLoad)
     @layerImage1 = @loadImage('images/layerfox-1.png', @onLoad)
     @layerImage2 = @loadImage('images/layerfox-2.png', @onLoad)
@@ -54,13 +54,13 @@ class App
     @imagesLoaded += 1
 
     if @imagesLoaded == 3
-        @ctx.drawImage(@capturedImage, 0, 0, 320, 240)
+        @ctx.drawImage(@capturedImage, 0, 0, @imageWidth, @imageHeight)
         @ctx.globalAlpha = 0.7
-        @ctx.drawImage(@layerColor, 0, 0, 320, 240)        
+        @ctx.drawImage(@layerColor, 0, 0, @imageWidth, @imageHeight)        
         @ctx.globalAlpha = 0.7
-        @ctx.drawImage(@layerImage1, 0, 0, 320, 240)
+        @ctx.drawImage(@layerImage1, 0, 0, @imageWidth, @imageHeight)
         @ctx.globalAlpha = 1
-        @ctx.drawImage(@layerImage2, 0, 0, 320, 240)
+        @ctx.drawImage(@layerImage2, 0, 0, @imageWidth, @imageHeight)
       
   loadImage: (src, onload) ->
     img = new Image();
