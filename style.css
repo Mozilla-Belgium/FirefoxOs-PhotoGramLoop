@@ -21,15 +21,9 @@ body {
 }
 
 .image {
-	height: 95px;
-	width: 95px;
+	height: 97px;
+	width: 97px;
 	float: left;
 	margin: 2px;
 	border-radius: 10px;
-}
-
-#gallery {
-	width: 100%;
-	text-align: center;
-	background-color: #FFFFFF;
 }
