@@ -28,6 +28,7 @@ function showGallery() {
 
 
 function showImage(id, src) {
+    console.log("src: "+src);
     app.loadPicture(src);
 }
 
