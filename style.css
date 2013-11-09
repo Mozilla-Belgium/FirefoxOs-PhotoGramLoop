@@ -1,0 +1,20 @@
+body {
+	background-color: #e0965a;
+}
+
+.appbar_button:hover {
+	background-color: #e68e3f;
+}
+
+@font-face {
+    font-family: 'Artbrush'; /*a name to be used later*/
+    src: url('Artbrush.ttf'); /*URL to font*/
+}
+
+#appbar {
+	background-color: #df731b;
+	background-image: none;
+	font-family: "Artbrush";
+	font-size: 1.5em;
+    color: white;
+}

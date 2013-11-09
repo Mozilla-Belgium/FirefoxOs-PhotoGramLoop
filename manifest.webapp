@@ -12,5 +12,6 @@
 	"permissions": {
 		"device-storage:pictures":{ "access": "readwrite" }
 	},
+	"type": "privileged",
 	"default_locale": "fr"
 }

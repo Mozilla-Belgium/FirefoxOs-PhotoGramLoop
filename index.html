@@ -3,11 +3,20 @@
 	<head>
 		<title>My First App!</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="brick-1.0beta8.css"/>
+		<script type="text/javascript" src="brick-1.0beta8.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
 	</head>
 
 	<body>
-		<h1>Hello, World!</h1>
+		<x-appbar id='appbar'>
+		    <header>PhotoGramLoop</header>
+		    <div id="addPic" class="appbar_button">+</div>
+		    <div id="help" class="appbar_button">?</div>
+		</x-appbar>
+
 		<br />
+
 		<button id='device-storage-pictures'>device storage!</button>
 		<div id="device-storage-pictures-display"></div>
 

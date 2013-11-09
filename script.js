@@ -1,5 +1,5 @@
-var deviceStoragePictures = document.querySelector("device-storage-pictures"),
-        deviceStoragePicturesDisplay =  document.querySelector("device-storage-pictures-display");
+var deviceStoragePictures = document.querySelector("#device-storage-pictures"),
+        deviceStoragePicturesDisplay =  document.querySelector("#device-storage-pictures-display");
     if (deviceStoragePictures && deviceStoragePicturesDisplay) {
         deviceStoragePictures.onclick = function () {
 
