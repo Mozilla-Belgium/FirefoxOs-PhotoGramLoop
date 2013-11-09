@@ -58,16 +58,22 @@ App = (function() {
     this.canvas = document.getElementById("canvas");
     this.ctx = canvas.getContext("2d");
     this.capturedImage = this.loadImage('images/demo.jpg', this.onLoad);
-    this.layerImage = this.loadImage('images/layer-1.png', this.onLoad);
+    this.layerImage1 = this.loadImage('images/layerfox-1.png', this.onLoad);
+    this.layerImage2 = this.loadImage('images/layerfox-2.png', this.onLoad);
+    this.layerColor = this.loadImage('images/layerfox-blue.png', this.onLoad);
     return this.imagesLoaded = 0;
   };
 
   App.prototype.onLoad = function() {
     this.imagesLoaded += 1;
-    if (this.imagesLoaded === 2) {
+    if (this.imagesLoaded === 3) {
       this.ctx.drawImage(this.capturedImage, 0, 0, 320, 240);
-      this.ctx.globalAlpha = 0.5;
-      return this.ctx.drawImage(this.layerImage, 0, 0);
+      this.ctx.globalAlpha = 0.7;
+      this.ctx.drawImage(this.layerColor, 0, 0, 320, 240);
+      this.ctx.globalAlpha = 0.7;
+      this.ctx.drawImage(this.layerImage1, 0, 0, 320, 240);
+      this.ctx.globalAlpha = 1;
+      return this.ctx.drawImage(this.layerImage2, 0, 0, 320, 240);
     }
   };
 

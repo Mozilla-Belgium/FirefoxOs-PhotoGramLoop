@@ -45,16 +45,22 @@ class App
     @canvas = document.getElementById("canvas")
     @ctx = canvas.getContext("2d")
     @capturedImage = @loadImage('images/demo.jpg', @onLoad)
-    @layerImage = @loadImage('images/layer-1.png', @onLoad)
+    @layerImage1 = @loadImage('images/layerfox-1.png', @onLoad)
+    @layerImage2 = @loadImage('images/layerfox-2.png', @onLoad)
+    @layerColor = @loadImage('images/layerfox-blue.png', @onLoad)
     @imagesLoaded = 0
 
   onLoad: () =>
     @imagesLoaded += 1
 
-    if @imagesLoaded == 2
-        @ctx.drawImage(@capturedImage, 0, 0, 320, 240)          
-        @ctx.globalAlpha = 0.5
-        @ctx.drawImage(@layerImage, 0, 0)
+    if @imagesLoaded == 3
+        @ctx.drawImage(@capturedImage, 0, 0, 320, 240)
+        @ctx.globalAlpha = 0.7
+        @ctx.drawImage(@layerColor, 0, 0, 320, 240)        
+        @ctx.globalAlpha = 0.7
+        @ctx.drawImage(@layerImage1, 0, 0, 320, 240)
+        @ctx.globalAlpha = 1
+        @ctx.drawImage(@layerImage2, 0, 0, 320, 240)
       
   loadImage: (src, onload) ->
     img = new Image();
