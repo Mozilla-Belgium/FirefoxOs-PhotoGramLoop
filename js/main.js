@@ -13,11 +13,14 @@ App = (function() {
 
   App.imageHeight;
 
+  App.pictureSrc;
+
   function App() {
     this.onLoad = __bind(this.onLoad, this);
     this.canvas = $("canvas");
     this.imageWidth = this.canvas.width();
     this.imageHeight = this.canvas.height();
+    this.pictureSrc = "images/demo.jpg";
   }
 
   App.prototype.init = function() {
@@ -58,7 +61,7 @@ App = (function() {
 
   App.prototype.gramify = function(onSuccess) {
     this.ctx = this.canvas.get(0).getContext("2d");
-    this.capturedImage = this.loadImage('images/demo.jpg', this.onLoad);
+    this.capturedImage = this.loadImage(this.pictureSrc, this.onLoad);
     this.layerImage1 = this.loadImage('images/layerfox-1.png', this.onLoad);
     this.layerImage2 = this.loadImage('images/layerfox-2.png', this.onLoad);
     this.layerColor = this.loadImage('images/layerfox-blue.png', this.onLoad);
@@ -67,6 +70,8 @@ App = (function() {
 
   App.prototype.onLoad = function() {
     this.imagesLoaded += 1;
+    console.log(this.imageWidth);
+    console.log(this.imageHeight);
     if (this.imagesLoaded === 3) {
       this.ctx.drawImage(this.capturedImage, 0, 0, this.imageWidth, this.imageHeight);
       this.ctx.globalAlpha = 0.7;
@@ -74,7 +79,8 @@ App = (function() {
       this.ctx.globalAlpha = 0.7;
       this.ctx.drawImage(this.layerImage1, 0, 0, this.imageWidth, this.imageHeight);
       this.ctx.globalAlpha = 1;
-      return this.ctx.drawImage(this.layerImage2, 0, 0, this.imageWidth, this.imageHeight);
+      this.ctx.drawImage(this.layerImage2, 0, 0, this.imageWidth, this.imageHeight);
+      return this.imagesLoaded = 0;
     }
   };
 
@@ -84,6 +90,11 @@ App = (function() {
     img.onload = onload;
     img.src = src;
     return img;
+  };
+
+  App.prototype.loadPicture = function(src) {
+    this.pictureSrc = src;
+    return this.screenPicture();
   };
 
   return App;
