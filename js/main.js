@@ -108,5 +108,6 @@ App = (function() {
 $(function() {
   var app;
   app = new App();
-  return app.init();
+  app.init();
+  return window.app = app;
 });
