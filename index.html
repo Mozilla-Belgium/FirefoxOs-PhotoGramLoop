@@ -10,7 +10,7 @@
 
 	<body>
 		<x-appbar id="appbar">
-		    <header>PhotoFoxGram</header>
+		    <header id="home">PhotoFoxGram</header>
 		    <div id="addPic" class="appbar_button">+</div>
 		    <div id="help" class="appbar_button">?</div>
 		</x-appbar>
@@ -24,6 +24,10 @@
 			<button id="pickimage">Take a picture</button>
 			<canvas width="320" height="240" id="canvas"></canvas>
 		</div>
+
+		<div id="screen-help" class="screen">
+			<h1>Help</h1>
+		</div>		
 
 		<!-- Insert Our Script -->
 		<script src='js/jquery-2.0.3.min.js'></script>
