@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My First App!</title>
+		<title>PhotoFoxGram</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="brick-1.0beta8.css"/>
 		<script type="text/javascript" src="brick-1.0beta8.js"></script>
@@ -9,18 +9,24 @@
 	</head>
 
 	<body>
-		<x-appbar id='appbar'>
-		    <header>PhotoGramLoop</header>
+		<x-appbar id="appbar">
+		    <header>PhotoFoxGram</header>
 		    <div id="addPic" class="appbar_button">+</div>
 		    <div id="help" class="appbar_button">?</div>
 		</x-appbar>
 
-		<br />
+		<div id="screen-list">
+			<button id='device-storage-pictures'>device storage!</button>
+			<div id="device-storage-pictures-display"></div>
+		</div>
 
-		<button id='device-storage-pictures'>device storage!</button>
-		<div id="device-storage-pictures-display"></div>
+		<div id="screen-picture" class="screen">
+			<button id="pickimage">Take a picture</button>
+			<canvas width="320" height="240" id="canvas"></canvas>
+		</div>
 
 		<!-- Insert Our Script -->
-		<script src='script.js'></script>
+		<script src='js/jquery-2.0.3.min.js'></script>
+		<script src='js/main.js'></script>
 	</body>
 </html>
